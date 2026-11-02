@@ -12,6 +12,19 @@ ng serve
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
+## Code quality
+
+```bash
+pnpm lint          # Check TypeScript and Angular templates
+pnpm lint:fix      # Fix supported ESLint issues
+pnpm format:check  # Check formatting
+pnpm format        # Format project files
+```
+
+ESLint checks Angular and TypeScript recommended rules, template accessibility, explicit class member visibility, and type-only imports. Class members are grouped in this order: static fields, instance fields, constructor, static methods, and instance methods. Signatures come before fields. Members within each group are not sorted by visibility or name.
+
+Prettier handles formatting separately from ESLint. Generated files and the pnpm lockfile are excluded from formatting.
+
 ## Code scaffolding
 
 Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
