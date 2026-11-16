@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
+import { RouteCard } from '../../shared/ui/route-card/route-card';
+import { Hero } from './sections/hero/hero';
+import { RouteCta } from './sections/route-cta/route-cta';
 
 @Component({
   selector: 'app-home',
-  template: `
-    <main>
-      <h1>Inclusive Route Planner</h1>
-      <p>Планировщик доступных маршрутов</p>
-    </main>
-  `,
+  imports: [Hero, RouteCard, RouteCta],
+  templateUrl: './home.html',
+  styleUrl: './home.scss',
 })
 export class Home {}

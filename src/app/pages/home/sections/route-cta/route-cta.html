@@ -1,0 +1,17 @@
+<section class="route-cta__surface" aria-labelledby="route-cta-title">
+  <div class="route-cta__content">
+    <h2 class="route-cta__title" id="route-cta-title">{{ title() }}</h2>
+    <p class="route-cta__description">{{ description() }}</p>
+  </div>
+
+  <app-button
+    class="route-cta__button"
+    variant="dark"
+    [withSymbol]="true"
+    [type]="buttonType()"
+    [disabled]="disabled()"
+    (click)="action.emit()"
+  >
+    {{ buttonLabel() }}
+  </app-button>
+</section>

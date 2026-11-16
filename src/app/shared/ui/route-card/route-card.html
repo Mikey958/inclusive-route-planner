@@ -1,0 +1,77 @@
+<div class="route-card__layout">
+  <div class="route-card__media">
+    <img
+      class="route-card__image"
+      [src]="imageUrl()"
+      [alt]="imageAlt()"
+      width="592"
+      height="348"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+
+  <div class="route-card__info">
+    @if (tags().length > 0) {
+      <div class="route-card__tags">
+        @for (tag of tags(); track $index) {
+          <span class="route-card__tag">{{ tag }}</span>
+        }
+      </div>
+    }
+
+    <h2 class="route-card__title">{{ title() }}</h2>
+    <p class="route-card__description">{{ description() }}</p>
+
+    <div class="route-card__metrics">
+      <span class="route-card__metric">
+        <svg class="route-card__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path
+            d="M5 5.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM7.5 8h3a3.5 3.5 0 0 1 0 7h-1a3.5 3.5 0 0 0 0 7h6a3.5 3.5 0 0 0 0-7"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.8"
+          />
+          <circle cx="18.5" cy="15.5" r="2.5" fill="currentColor" />
+        </svg>
+        <span>{{ distanceLabel() }}</span>
+      </span>
+
+      <span class="route-card__separator" aria-hidden="true"></span>
+
+      <span class="route-card__metric">
+        <svg class="route-card__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M19 10c0 5.2-7 11-7 11S5 15.2 5 10a7 7 0 1 1 14 0Z" fill="currentColor" />
+          <circle cx="12" cy="10" r="2.3" fill="var(--color-white)" />
+        </svg>
+        <span
+          >{{ stopsCount() }}
+          {{ stopsCount() | russianPlural: 'остановка' : 'остановки' : 'остановок' }}</span
+        >
+      </span>
+    </div>
+
+    @if (accessibilityLabel()) {
+      <div class="route-card__accessibility">
+        <svg
+          class="route-card__accessibility-icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M5 5.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM7.5 8h3a3.5 3.5 0 0 1 0 7h-1a3.5 3.5 0 0 0 0 7h6a3.5 3.5 0 0 0 0-7"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.8"
+          />
+          <circle cx="18.5" cy="15.5" r="2.5" fill="currentColor" />
+        </svg>
+        <span class="route-card__accessibility-label">{{ accessibilityLabel() }}</span>
+        <span class="route-card__accessibility-indicator" aria-hidden="true"></span>
+      </div>
+    }
+  </div>
+</div>

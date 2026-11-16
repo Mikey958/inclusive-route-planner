@@ -39,6 +39,13 @@ For a complete list of available schematics (such as `components`, `directives`,
 ng generate --help
 ```
 
+## Architecture
+
+- `src/app/layout` contains application-wide layout, such as the header.
+- `src/app/pages` contains routed pages. Home-specific sections live under `pages/home/sections`.
+- `src/app/shared/ui` contains reusable UI components; `src/app/shared/pipes` contains shared formatting pipes.
+- `src/styles/_tokens.scss` is the design-token source for colors, spacing, radii, and font stacks. Component styles use BEM classes and consume these tokens through CSS custom properties.
+
 ## Building
 
 To build the project run:

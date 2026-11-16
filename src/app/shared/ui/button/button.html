@@ -1,0 +1,13 @@
+<button
+  class="button"
+  [class.button--primary]="variant() === 'primary'"
+  [class.button--outline]="variant() === 'outline'"
+  [class.button--dark]="variant() === 'dark'"
+  [type]="type()"
+  [disabled]="disabled()"
+>
+  @if (withSymbol()) {
+    <span class="button__symbol" aria-hidden="true">{{ symbol() }}</span>
+  }
+  <span class="button__label"><ng-content /></span>
+</button>

@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@use './styles/tokens';
+
+.page-root {
+  min-height: 100%;
+}
+
+.page {
+  min-height: 100vh;
+  margin: 0;
+  background: var(--color-page);
+  color: var(--color-text-default);
+  font-family: var(--font-family-system);
+}
+
+.page__app {
+  display: block;
+  min-height: 100vh;
+}
