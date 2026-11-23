@@ -16,6 +16,7 @@ export class RouteCard {
   public readonly distanceKm = input.required<number>();
   public readonly stopsCount = input.required<number>();
   public readonly tags = input<readonly string[]>([]);
+  public readonly author = input<string | null>(null);
   public readonly accessibilityLabel = input<string | null>(null);
 
   public readonly distanceLabel = computed(() => {

@@ -1,5 +1,7 @@
 .page-root {
-  --color-page: #fafbf7;
+  --color-page: var(--color-white);
+  --color-header: #fafbf7;
+  --color-header-brand: #000;
   --color-surface: #fff;
   --color-surface-soft: #eaf1e3;
   --color-surface-tag: #f0f3dc;
@@ -9,9 +11,11 @@
   --color-text-primary: #202d26;
   --color-text-default: #171a18;
   --color-text-secondary: #5d6962;
+  --color-text-secondary-rgb: 93 105 98;
   --color-text-muted: #737b74;
   --color-text-tag: #727a70;
-  --color-text-card: #757c74;
+  --color-text-card: #5d6962;
+  --color-text-metadata: #aeb4b1;
   --color-text-subtle: #bec4bc;
   --color-text-on-action: #243a24;
 
@@ -29,8 +33,10 @@
   --color-shadow-rgb: 23 26 24;
 
   --font-family-system: Arial, Helvetica, sans-serif;
+  --font-family-regular: 'FONTSPRING DEMO - Alexer', var(--font-family-system);
   --font-family-text: 'FONTSPRING DEMO - Alexer Med', var(--font-family-system);
-  --font-family-display: 'FONTSPRING DEMO - Alexer Black', var(--font-family-system);
+  --font-family-display: 'Arial Black', var(--font-family-system);
+  --font-family-hero: 'FONTSPRING DEMO - Alexer Black', 'Arial Black', var(--font-family-system);
 
   --space-1: 4px;
   --space-2: 8px;

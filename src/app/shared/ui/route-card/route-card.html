@@ -12,10 +12,15 @@
   </div>
 
   <div class="route-card__info">
-    @if (tags().length > 0) {
-      <div class="route-card__tags">
-        @for (tag of tags(); track $index) {
-          <span class="route-card__tag">{{ tag }}</span>
+    @if (tags().length > 0 || author()) {
+      <div class="route-card__header">
+        <div class="route-card__tags">
+          @for (tag of tags(); track $index) {
+            <span class="route-card__tag">{{ tag }}</span>
+          }
+        </div>
+        @if (author()) {
+          <span class="route-card__author">{{ author() }}</span>
         }
       </div>
     }

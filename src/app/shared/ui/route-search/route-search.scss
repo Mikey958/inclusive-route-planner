@@ -1,0 +1,131 @@
+.route-search {
+  display: block;
+}
+
+.route-search__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 200px;
+  gap: 20px;
+}
+
+.route-search__field-wrapper {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  align-items: center;
+}
+
+.route-search__field,
+.route-search__filters {
+  height: 70px;
+  border: 1px solid var(--color-border);
+  border-radius: 25px;
+  font-family: var(--font-family-regular);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 35px;
+}
+
+.route-search__field {
+  width: 100%;
+  min-width: 0;
+  padding: 0 24px 0 60px;
+  appearance: none;
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+}
+
+.route-search__icon {
+  position: absolute;
+  left: 20px;
+  display: block;
+  width: 22px;
+  height: 22px;
+  color: var(--color-text-secondary);
+  pointer-events: none;
+}
+
+.route-search__field::placeholder {
+  color: rgb(var(--color-text-secondary-rgb) / 50%);
+  opacity: 1;
+}
+
+.route-search__filters {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  background: var(--color-page);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+}
+
+.route-search__field:focus-visible,
+.route-search__filters:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+  .route-search__layout {
+    grid-template-columns: minmax(0, 1fr) 160px;
+    gap: 12px;
+  }
+
+  .route-search__field,
+  .route-search__filters {
+    height: 60px;
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .route-search__field {
+    padding-right: 20px;
+    padding-left: 48px;
+  }
+
+  .route-search__icon {
+    left: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .route-search__layout {
+    grid-template-columns: minmax(0, 1fr) 110px;
+    gap: 8px;
+  }
+
+  .route-search__field,
+  .route-search__filters {
+    height: 56px;
+    border-radius: 18px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .route-search__field {
+    padding-right: 12px;
+    padding-left: 42px;
+  }
+
+  .route-search__filters {
+    padding-inline: 10px;
+  }
+
+  .route-search__icon {
+    left: 12px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  .route-search__layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .route-search__filters {
+    min-height: 48px;
+  }
+}

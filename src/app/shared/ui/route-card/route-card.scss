@@ -2,25 +2,6 @@
   display: block;
 }
 
-.route-card__layout,
-.route-card__media,
-.route-card__image,
-.route-card__info,
-.route-card__tags,
-.route-card__tag,
-.route-card__title,
-.route-card__description,
-.route-card__metrics,
-.route-card__metric,
-.route-card__icon,
-.route-card__separator,
-.route-card__accessibility,
-.route-card__accessibility-icon,
-.route-card__accessibility-label,
-.route-card__accessibility-indicator {
-  box-sizing: border-box;
-}
-
 .route-card__layout {
   display: grid;
   min-height: 348px;
@@ -59,11 +40,19 @@
   background: var(--color-surface);
 }
 
+.route-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
 .route-card__tags {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 24px;
 }
 
 .route-card__tag {
@@ -80,6 +69,14 @@
   line-height: 1;
 }
 
+.route-card__author {
+  color: var(--color-text-metadata);
+  font-family: var(--font-family-regular);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 35px;
+}
+
 .route-card__title {
   margin: 0 0 14px;
   color: var(--color-text-primary);
@@ -90,12 +87,13 @@
 }
 
 .route-card__description {
+  max-width: 614px;
   margin: 0;
   color: var(--color-text-card);
-  font-family: var(--font-family-text);
+  font-family: var(--font-family-regular);
   font-size: 20px;
-  font-weight: 500;
-  line-height: 1.5;
+  font-weight: 400;
+  line-height: 35px;
 }
 
 .route-card__metrics {
@@ -104,11 +102,11 @@
   align-items: center;
   gap: 12px;
   margin-top: 20px;
-  color: var(--color-text-muted);
+  color: var(--color-text-secondary);
   font-family: var(--font-family-text);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 500;
-  line-height: 1.3;
+  line-height: 35px;
 }
 
 .route-card__metric {
@@ -123,7 +121,7 @@
   width: 22px;
   height: 22px;
   flex: 0 0 auto;
-  color: var(--color-text-muted);
+  color: var(--color-text-secondary);
 }
 
 .route-card__separator {
@@ -142,11 +140,11 @@
   margin-top: 18px;
   padding-top: 16px;
   border-top: 1px solid var(--color-border);
-  color: var(--color-text-subtle);
-  font-family: var(--font-family-text);
+  color: var(--color-text-metadata);
+  font-family: var(--font-family-regular);
   font-size: 16px;
-  font-weight: 500;
-  line-height: 1.3;
+  font-weight: 400;
+  line-height: 35px;
 }
 
 .route-card__accessibility-icon {
@@ -184,11 +182,13 @@
 
   .route-card__description {
     font-size: 18px;
+    line-height: 28px;
   }
 
   .route-card__metrics {
     gap: 8px;
     font-size: 16px;
+    line-height: 28px;
   }
 
   .route-card__metric {
@@ -214,11 +214,22 @@
   }
 
   .route-card__tags {
+    margin-bottom: 0;
+  }
+
+  .route-card__header {
     margin-bottom: 18px;
+  }
+
+  .route-card__author {
+    font-size: 14px;
+    line-height: 24px;
   }
 
   .route-card__accessibility {
     margin-top: 16px;
+    font-size: 14px;
+    line-height: 24px;
   }
 }
 

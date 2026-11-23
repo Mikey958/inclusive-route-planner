@@ -4,21 +4,22 @@
   <section class="home__routes" aria-labelledby="home-routes-title">
     <div class="home__routes-heading">
       <h2 class="home__routes-title" id="home-routes-title">Подборка маршрутов</h2>
-      <span class="home__routes-all">
+      <a class="home__routes-all" routerLink="/routes">
         Все маршруты
         <span class="home__routes-arrow" aria-hidden="true">→</span>
-      </span>
+      </a>
     </div>
 
     <app-route-card
-      imageUrl="/assets/images/route-history.png"
-      imageAlt="Историческое здание в Екатеринбурге"
-      title="Исторический пеший маршрут"
-      description="От Исторического сквера до Храма на Крови через купеческие особняки и музеи старого города."
-      [distanceKm]="2.7"
-      [stopsCount]="8"
-      [tags]="['История']"
-      accessibilityLabel="Доступность для людей с ограниченными возможностями не проверена"
+      [imageUrl]="featuredRoute.imageUrl"
+      [imageAlt]="featuredRoute.imageAlt"
+      [title]="featuredRoute.title"
+      [description]="featuredRoute.description"
+      [distanceKm]="featuredRoute.distanceKm"
+      [stopsCount]="featuredRoute.stopsCount"
+      [tags]="featuredRoute.tags"
+      [author]="featuredRoute.author"
+      [accessibilityLabel]="featuredRoute.accessibilityLabel"
     />
   </section>
 

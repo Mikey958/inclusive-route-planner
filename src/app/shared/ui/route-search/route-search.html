@@ -1,0 +1,15 @@
+<div class="route-search__layout">
+  <label class="route-search__field-wrapper">
+    <svg class="route-search__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <circle cx="10.8" cy="10.8" r="6.8" stroke="currentColor" stroke-width="1.8" />
+      <path d="m16 16 4.4 4.4" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" />
+    </svg>
+    <input
+      class="route-search__field"
+      type="text"
+      [placeholder]="placeholder()"
+      aria-label="Поиск маршрутов"
+    />
+  </label>
+  <button class="route-search__filters" type="button">{{ filterLabel() }}</button>
+</div>

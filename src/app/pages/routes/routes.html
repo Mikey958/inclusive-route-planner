@@ -1,0 +1,30 @@
+<main class="routes-page__content">
+  <app-breadcrumbs [items]="breadcrumbItems" />
+
+  <p class="routes-page__city">{{ city }}</p>
+  <h1 class="routes-page__title">Каталог маршрутов</h1>
+  <p class="routes-page__description">Найдите прогулку по теме, длине и условиям доступности.</p>
+
+  <app-route-search />
+
+  <p class="routes-page__result-count">
+    Найден {{ routes.length }}
+    {{ routes.length | russianPlural: 'маршрут' : 'маршрута' : 'маршрутов' }}
+  </p>
+
+  <div class="routes-page__results">
+    @for (route of routes; track route.title) {
+      <app-route-card
+        [imageUrl]="route.imageUrl"
+        [imageAlt]="route.imageAlt"
+        [title]="route.title"
+        [description]="route.description"
+        [distanceKm]="route.distanceKm"
+        [stopsCount]="route.stopsCount"
+        [tags]="route.tags"
+        [author]="route.author"
+        [accessibilityLabel]="route.accessibilityLabel"
+      />
+    }
+  </div>
+</main>

@@ -1,12 +1,7 @@
+@use './styles/reset';
 @use './styles/tokens';
 
-.page-root {
-  min-height: 100%;
-}
-
 .page {
-  min-height: 100vh;
-  margin: 0;
   background: var(--color-page);
   color: var(--color-text-default);
   font-family: var(--font-family-system);

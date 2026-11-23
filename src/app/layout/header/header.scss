@@ -1,15 +1,3 @@
-.header,
-.header__brand,
-.header__logo,
-.header__navigation,
-.header__link,
-.header__login,
-.header__menu-toggle,
-.header__menu-icon,
-.header__mobile-menu {
-  box-sizing: border-box;
-}
-
 .header {
   position: relative;
   z-index: 10;
@@ -20,7 +8,7 @@
   justify-content: space-between;
   gap: var(--space-8);
   padding: 18px var(--space-10);
-  background: var(--color-page);
+  background: var(--color-header);
 }
 
 .header__brand {
@@ -28,7 +16,7 @@
   flex: 0 0 auto;
   align-items: center;
   gap: var(--space-4);
-  color: var(--color-text-primary);
+  color: var(--color-header-brand);
   text-decoration: none;
 }
 
@@ -39,9 +27,10 @@
 }
 
 .header__brand-name {
+  font-family: var(--font-family-display);
   font-size: 28px;
-  font-weight: 700;
-  line-height: 1.15;
+  font-weight: 900;
+  line-height: 1;
   white-space: nowrap;
 }
 
@@ -54,12 +43,17 @@
 }
 
 .header__link {
-  color: var(--color-text-default);
+  color: var(--color-header-brand);
+  font-family: var(--font-family-text);
   font-size: 20px;
   font-weight: 500;
   line-height: 1.25;
   text-decoration: none;
   white-space: nowrap;
+}
+
+.header__link:hover {
+  color: var(--color-brand);
 }
 
 .header__login {
@@ -69,10 +63,11 @@
   border: 1px solid var(--color-border-control);
   border-radius: var(--radius-pill);
   background: transparent;
-  color: var(--color-text-default);
+  color: var(--color-text-primary);
   cursor: pointer;
-  font-family: inherit;
+  font-family: var(--font-family-text);
   font-size: 20px;
+  font-weight: 500;
   line-height: 1;
 }
 
@@ -87,6 +82,8 @@
   display: none;
 }
 
+.header__brand:focus-visible,
+.header__link:focus-visible,
 .header__login:focus-visible,
 .header__menu-toggle:focus-visible {
   outline: 3px solid var(--color-focus);
@@ -134,7 +131,7 @@
     gap: var(--space-4);
     padding: var(--space-4) var(--space-6) var(--space-6);
     border-top: 1px solid var(--color-border-subtle);
-    background: var(--color-page);
+    background: var(--color-header);
     box-shadow: 0 12px 20px rgb(var(--color-shadow-rgb) / 8%);
   }
 

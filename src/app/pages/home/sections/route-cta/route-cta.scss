@@ -2,14 +2,6 @@
   display: block;
 }
 
-.route-cta__surface,
-.route-cta__content,
-.route-cta__title,
-.route-cta__description,
-.route-cta__button {
-  box-sizing: border-box;
-}
-
 .route-cta__surface {
   display: flex;
   width: min(var(--layout-content-max), calc(100% - var(--space-10) - var(--space-10)));
@@ -40,7 +32,7 @@
 .route-cta__description {
   margin: 0;
   color: var(--color-text-secondary);
-  font-family: var(--font-family-text);
+  font-family: var(--font-family-regular);
   font-size: 20px;
   font-weight: 400;
   line-height: 35px;

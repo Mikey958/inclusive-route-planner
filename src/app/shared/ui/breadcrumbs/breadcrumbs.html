@@ -1,0 +1,24 @@
+<nav class="breadcrumbs__nav" aria-label="Хлебные крошки">
+  <ol class="breadcrumbs__list">
+    @for (item of items(); track $index; let last = $last) {
+      <li class="breadcrumbs__item">
+        @if (item.path && !last) {
+          <a class="breadcrumbs__link" [routerLink]="item.path">{{ item.label }}</a>
+        } @else {
+          <span class="breadcrumbs__label" [attr.aria-current]="last ? 'page' : null">
+            {{ item.label }}
+          </span>
+        }
+
+        @if (!last) {
+          <img
+            class="breadcrumbs__separator"
+            src="assets/icons/arrow.svg"
+            alt=""
+            aria-hidden="true"
+          />
+        }
+      </li>
+    }
+  </ol>
+</nav>

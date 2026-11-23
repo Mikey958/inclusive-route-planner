@@ -2,16 +2,6 @@
   display: block;
 }
 
-.hero__surface,
-.hero__content,
-.hero__eyebrow,
-.hero__title,
-.hero__title-line,
-.hero__description,
-.hero__actions {
-  box-sizing: border-box;
-}
-
 .hero__surface {
   display: flex;
   width: min(var(--layout-content-max), calc(100% - var(--space-10) - var(--space-10)));
@@ -55,10 +45,10 @@
 .hero__title {
   margin: 0 0 16px;
   color: var(--color-white);
-  font-family: var(--font-family-display);
+  font-family: var(--font-family-hero);
   font-size: 80px;
-  font-weight: 900;
-  line-height: 1.08;
+  font-weight: 400;
+  line-height: 1;
 }
 
 .hero__title-line {
