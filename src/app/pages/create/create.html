@@ -1,0 +1,62 @@
+<main class="create-page__content">
+  <app-breadcrumbs [items]="breadcrumbItems" />
+
+  <section class="create-page__intro" aria-labelledby="create-page-title">
+    <h1 class="create-page__title" id="create-page-title">Создать свой маршрут</h1>
+    <p class="create-page__description">
+      Выберите места Екатеринбурга и расположите их в порядке посещения.
+    </p>
+  </section>
+
+  <div class="create-page__workspace">
+    <section
+      class="create-page__panel create-page__places"
+      aria-labelledby="create-page-places-title"
+    >
+      <h2 class="create-page__panel-title" id="create-page-places-title">Места для прогулки</h2>
+      <label class="create-page__field-wrap">
+        <span class="create-page__visually-hidden">Название или адрес</span>
+        <input class="create-page__field" type="search" placeholder="Название или адрес" />
+      </label>
+
+      <ul class="create-page__place-list">
+        @for (place of places; track $index) {
+          <li class="create-page__place">
+            <span class="create-page__place-image" aria-hidden="true"></span>
+            <span class="create-page__place-copy">
+              <span class="create-page__place-name">{{ place.name }}</span>
+              <span class="create-page__place-address">{{ place.address }}</span>
+            </span>
+            <button
+              class="create-page__add-button"
+              type="button"
+              [attr.aria-label]="'Добавить «' + place.name + '» в прогулку'"
+            ></button>
+          </li>
+        }
+      </ul>
+    </section>
+
+    <section
+      class="create-page__panel create-page__route"
+      aria-labelledby="create-page-route-title"
+    >
+      <h2 class="create-page__panel-title" id="create-page-route-title">Ваша прогулка</h2>
+      <p class="create-page__route-description">
+        Найдите прогулку по теме, длине и условиям доступности.
+      </p>
+      <label class="create-page__field-wrap">
+        <span class="create-page__visually-hidden">Название прогулки</span>
+        <input class="create-page__field" type="text" placeholder="Например, прогулка по центру" />
+      </label>
+
+      <div class="create-page__empty-state">
+        <span class="create-page__empty-icon" aria-hidden="true"></span>
+        <p class="create-page__empty-title">Добавьте первую остановку</p>
+        <p class="create-page__empty-description">Выберите минимум два места из списка</p>
+      </div>
+
+      <button class="create-page__save-button" type="button">Сохранить маршрут</button>
+    </section>
+  </div>
+</main>

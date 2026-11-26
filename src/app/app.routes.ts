@@ -13,4 +13,10 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/routes/routes').then((m) => m.RoutesPage),
     title: 'Каталог маршрутов',
   },
+  {
+    path: 'create',
+    pathMatch: 'full',
+    loadComponent: () => import('./pages/create/create').then((m) => m.CreatePage),
+    title: 'Создание маршрута',
+  },
 ];

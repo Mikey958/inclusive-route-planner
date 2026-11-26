@@ -1,0 +1,33 @@
+@mixin _text($family, $size, $weight, $line-height: null) {
+  font-family: var(--font-family-#{$family});
+  font-size: $size;
+  font-weight: $weight;
+
+  @if $line-height != null {
+    line-height: $line-height;
+  }
+}
+
+@mixin regular($size, $line-height: null) {
+  @include _text(regular, $size, 400, $line-height);
+}
+
+@mixin medium($size, $line-height: null) {
+  @include _text(text, $size, 500, $line-height);
+}
+
+@mixin bold($size, $line-height: null, $family: text) {
+  @include _text($family, $size, 700, $line-height);
+}
+
+@mixin display($size, $line-height: null) {
+  @include _text(display, $size, 900, $line-height);
+}
+
+@mixin hero($size, $line-height: null) {
+  @include _text(hero, $size, 400, $line-height);
+}
+
+@mixin system($size, $line-height: null) {
+  @include _text(system, $size, 400, $line-height);
+}

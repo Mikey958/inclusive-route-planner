@@ -5,9 +5,9 @@
   background: var(--color-page);
   color: var(--color-text-default);
   font-family: var(--font-family-system);
-}
 
-.page__app {
-  display: block;
-  min-height: 100vh;
+  &__app {
+    display: block;
+    min-height: 100vh;
+  }
 }

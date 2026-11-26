@@ -1,160 +1,150 @@
+@use '../../../../../styles/typography' as type;
+
 .hero {
   display: block;
-}
 
-.hero__surface {
-  display: flex;
-  width: min(var(--layout-content-max), calc(100% - var(--space-10) - var(--space-10)));
-  min-height: 516px;
-  align-items: center;
-  margin: var(--space-10) auto 0;
-  overflow: hidden;
-  border-radius: var(--radius-card);
-  background-color: var(--color-hero-fallback);
-  background-image: url('/assets/images/hero.png');
-  background-position: center;
-  background-size: cover;
-}
+  &__surface {
+    display: flex;
+    width: min(var(--layout-content-max), calc(100% - var(--space-10) - var(--space-10)));
+    min-height: 516px;
+    align-items: center;
+    margin: var(--space-10) auto 0;
+    overflow: hidden;
+    border-radius: var(--radius-card);
+    background-color: var(--color-hero-fallback);
+    background-image: url('/assets/images/hero.png');
+    background-position: center;
+    background-size: cover;
+  }
 
-.hero__content {
-  display: flex;
-  width: 100%;
-  min-height: 516px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 40px 88px;
-}
+  &__content {
+    display: flex;
+    width: 100%;
+    min-height: 516px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 40px 88px;
+  }
 
-.hero__eyebrow {
-  display: inline-flex;
-  min-height: 41px;
-  align-items: center;
-  justify-content: center;
-  margin: 0 0 32px;
-  padding: 0 30px;
-  border: 1px solid var(--color-white);
-  border-radius: 23px;
-  color: var(--color-white);
-  font-family: var(--font-family-text);
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1;
-}
+  &__eyebrow {
+    display: inline-flex;
+    min-height: 41px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 32px;
+    padding: 0 30px;
+    border: 1px solid var(--color-white);
+    border-radius: 23px;
+    color: var(--color-white);
+    @include type.medium(20px, 1);
+  }
 
-.hero__title {
-  margin: 0 0 16px;
-  color: var(--color-white);
-  font-family: var(--font-family-hero);
-  font-size: 80px;
-  font-weight: 400;
-  line-height: 1;
-}
+  &__title {
+    margin: 0 0 16px;
+    color: var(--color-white);
+    @include type.hero(80px, 1);
+  }
 
-.hero__title-line {
-  display: block;
-}
+  &__title-line {
+    display: block;
+  }
 
-.hero__description {
-  max-width: 504px;
-  margin: 0;
-  color: var(--color-white);
-  font-family: var(--font-family-text);
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 35px;
-}
+  &__description {
+    max-width: 504px;
+    margin: 0;
+    color: var(--color-white);
+    @include type.medium(20px, 35px);
+  }
 
-.hero__actions {
-  display: flex;
-  align-items: center;
-  gap: var(--space-5);
-  margin-top: var(--space-8);
-}
-
-@media (max-width: 900px) {
-  .hero__surface {
-    width: calc(100% - 48px);
-    min-height: 480px;
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-5);
     margin-top: var(--space-8);
   }
 
-  .hero__content {
-    min-height: 480px;
-    padding-inline: 48px;
+  @media (max-width: 900px) {
+    &__surface {
+      width: calc(100% - 48px);
+      min-height: 480px;
+      margin-top: var(--space-8);
+    }
+
+    &__content {
+      min-height: 480px;
+      padding-inline: 48px;
+    }
+
+    &__eyebrow {
+      margin-bottom: var(--space-6);
+    }
+
+    &__title {
+      @include type.hero(clamp(52px, 7vw, 64px), 1);
+    }
+
+    &__description {
+      max-width: 460px;
+      @include type.medium(18px, 30px);
+    }
+
+    &__actions {
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      margin-top: var(--space-6);
+    }
   }
 
-  .hero__eyebrow {
-    margin-bottom: var(--space-6);
+  @media (max-width: 600px) {
+    &__surface {
+      width: calc(100% - 32px);
+      min-height: 500px;
+      margin-top: var(--space-6);
+      background-position: left center;
+    }
+
+    &__content {
+      min-height: 500px;
+      padding: 32px 24px;
+    }
+
+    &__eyebrow {
+      min-height: 36px;
+      margin-bottom: 20px;
+      padding-inline: 20px;
+      @include type.medium(16px, 1);
+    }
+
+    &__title {
+      margin-bottom: 12px;
+      @include type.hero(clamp(36px, 10vw, 48px), 1.05);
+    }
+
+    &__description {
+      @include type.medium(16px, 24px);
+    }
+
+    &__actions {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-3);
+      margin-top: var(--space-6);
+    }
   }
 
-  .hero__title {
-    font-size: clamp(52px, 7vw, 64px);
-  }
+  @media (max-width: 360px) {
+    &__surface {
+      min-height: 520px;
+    }
 
-  .hero__description {
-    max-width: 460px;
-    font-size: 18px;
-    line-height: 30px;
-  }
+    &__content {
+      min-height: 520px;
+      padding-inline: 20px;
+    }
 
-  .hero__actions {
-    flex-wrap: wrap;
-    gap: var(--space-3);
-    margin-top: var(--space-6);
-  }
-}
-
-@media (max-width: 600px) {
-  .hero__surface {
-    width: calc(100% - 32px);
-    min-height: 500px;
-    margin-top: var(--space-6);
-    background-position: left center;
-  }
-
-  .hero__content {
-    min-height: 500px;
-    padding: 32px 24px;
-  }
-
-  .hero__eyebrow {
-    min-height: 36px;
-    margin-bottom: 20px;
-    padding-inline: 20px;
-    font-size: 16px;
-  }
-
-  .hero__title {
-    margin-bottom: 12px;
-    font-size: clamp(36px, 10vw, 48px);
-    line-height: 1.05;
-  }
-
-  .hero__description {
-    font-size: 16px;
-    line-height: 24px;
-  }
-
-  .hero__actions {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-3);
-    margin-top: var(--space-6);
-  }
-}
-
-@media (max-width: 360px) {
-  .hero__surface {
-    min-height: 520px;
-  }
-
-  .hero__content {
-    min-height: 520px;
-    padding-inline: 20px;
-  }
-
-  .hero__title {
-    font-size: clamp(28px, 9.5vw, 34px);
+    &__title {
+      @include type.hero(clamp(28px, 9.5vw, 34px), 1.05);
+    }
   }
 }
